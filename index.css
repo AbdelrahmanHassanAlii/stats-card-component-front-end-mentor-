@@ -16,6 +16,7 @@
 }
 
 body {
+  font-family: "Inter", sans-serif;
   background-color: var(--main-background);
   color: var(--white);
 }
@@ -37,20 +38,34 @@ body {
 
 .main .content .card {
   display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
   width: 70%;
+  text-align: center;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
   overflow: hidden;
-  height: 400px;
-  justify-content: space-between;
+}
+
+@media (min-width: 800px) {
+  .main .content .card {
+    flex-direction: row;
+    text-align: left;
+  }
 }
 
 .main .content .card .right {
   position: relative;
 }
+/* @media (max-width: 800px) {
+  .main .content .card .right {
+    height: 300px;
+  }
+} */
+
 .main .content .card .right::after {
   content: "";
   position: absolute;
@@ -70,11 +85,27 @@ body {
 
 .main .content .card .left {
   padding: 50px;
-  width: 40%;
+}
+@media (max-width: 800px) {
+  .main .content .card .left {
+    height: 290px;
+  }
+}
+@media (min-width: 800px) {
+  .main .content .card .left {
+    width: 40%;
+  }
 }
 
 .main .content .card .left .top {
   margin-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+  .main .content .card .left .top {
+    font-size: 12px;
+    margin-top: -20px;
+  }
 }
 
 .main .content .card .left .top span {
@@ -84,16 +115,41 @@ body {
 .main .content .card .left .middle {
   color: var(--main-paragraph-color);
   font-weight: lighter;
-  width: 90%;
+}
+@media (max-width: 800px) {
+  .main .content .card .left .middle {
+    font-size: 10px;
+  }
+}
+@media (min-width: 800px) {
+  .main .content .card .left .middle {
+    width: 90%;
+  }
 }
 
 .main .content .card .left .bottom {
-  display: flex;
   margin-top: 70px;
+}
+@media (max-width: 800px) {
+  .main .content .card .left .bottom {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 800px) {
+  .main .content .card .left .bottom {
+    display: flex;
+  }
 }
 
 .main .content .card .left .bottom .box {
-  margin-right: 50px;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 800px) {
+  .main .content .card .left .bottom .box {
+    margin-right: 50px;
+  }
 }
 
 .main .content .card .left .bottom .box .number {
@@ -108,4 +164,14 @@ body {
   color: var(--main-paragraph-color);
   font-family: "Lexend Deca", sans-serif;
   letter-spacing: 1px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
